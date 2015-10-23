@@ -1,4 +1,4 @@
-cp -r ./vim $RCPATH/vimfilers/vim
+cp -r ./vim $RCPATH/vimfilers/
 cp ./vimrc $RCPATH/vimfilers/vimrc
 cp ./gvimrc $RCPATH/vimfilers/gvimrc
 
