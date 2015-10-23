@@ -15,4 +15,4 @@ vim +NeoBundleInstall +qall
 cd ~/.vim/bundle/vimproc.vim && make
 
 ## install YouCompleteMe
-cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer --system-libclang 
+cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer --system-libclang --gocode-completer
