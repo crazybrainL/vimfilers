@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 ## Link dictionay and files
-ln -s `pwd` ~/.vim
-ln -s `pwd`/vimrc ~/.vimrc 
-ln -s `pwd`/gvimrc ~/.gvimrc 
+rm ~/.vim    | ln -s `pwd` ~/.vim
+rm ~/.vimrc  | ln -s `pwd`/vimrc ~/.vimrc 
+rm ~/.gvimrc | ln -s `pwd`/gvimrc ~/.gvimrc 
 
 ## Install Neobundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
