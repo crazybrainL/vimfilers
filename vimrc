@@ -1,4 +1,4 @@
-" Yen3's vimrc
+" whlin's vimrc
 " zM: foldall
 " General: {{{
 " remapping the leader key
