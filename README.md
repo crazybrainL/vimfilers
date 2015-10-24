@@ -6,14 +6,14 @@
 
 ## Installation
 
-進入 ~/Document/rc , 將vimfilers git clone 進來
+1. 進入 ~/Document/rc , 將vimfilers git clone 進來
 
 ```sh
 $ cd ~/Document/rc
 $ git clone https://github.com/whlin/vimfilers.git
 ```
 
-進入 vimfilers 資料夾, 執行 install_unix.sh
+2. 進入 vimfilers 資料夾, 執行 install_unix.sh
 
 ```sh
 $ cd vimfiles
