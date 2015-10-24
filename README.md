@@ -1,50 +1,38 @@
-# whlin_vimrc
+# whlin's vim setting
 
-在 document 底下, 創建 rc 資料夾
+## preface
+
+請先完成 rc 的環境設置 請參考 [rc]
+
+## Installation
+
+進入 ~/Document/rc , 將vimfilers git clone 進來
 
 ```sh
-$ mkdir rc
-$ cd rc
-$ git clone https://github.com/whlin/vimfiles.git
+$ cd ~/Document/rc
+$ git clone https://github.com/whlin/vimfilers.git
 ```
 
-進入 zshrc 資料夾, 執行 install_unix.sh
+進入 vimfilers 資料夾, 執行 install_unix.sh
 
 ```sh
 $ cd vimfiles
 $ ./install_unix.sh
 ```
 
-# yen3's vimrc
+## local rc_files 目錄設置
 
-You can get more detials [here](http://yen3.github.io/posts/20131109_using-vim-as-a-default-text-editor.html)(Tradtional Chinese)
-But the some information in the blog article is out of dated.
+在家目錄, 創建 rc_files 資料夾, 並將 vimfilers 檔案 git clone 進去
 
-## Install
+```sh
+$ mkdir rc_files
+$ cd ~/rc_files
+$ git clone https://github.com/whlin/vimfiles.git
+```
 
-### Linux/ Mac OSX
+## reference
 
-1. Get the source from git
-    
-        git clone https://github.com/yen3/vimfiles
+ - [yen3 vimfilers]
 
-2. Change to the folder
 
-        cd vimfiles
-
-3. Create the symbolic links
-
-        ln -s . ~/.vim
-        ln -s ~/.vim/vim ~/.vimrc 
-        ln -s ~/.vim/gvimrc~/.gvimrc 
-
-4. Install all plugins through [NeoBundle](https://github.com/Shougo/neobundle.vim)
-
-        cd .vim
-        ./install_unix.sh
-
-## Update plugins
-
-* Open `vim` and types
-
-        :NeoBundleUpdate
+[yen3 vimfilers]: <https://github.com/yen3/vimfiles>
