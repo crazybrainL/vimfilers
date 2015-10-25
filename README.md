@@ -34,6 +34,9 @@ $ git clone https://github.com/whlin/vimfiles.git
 
  - [yen3 vimfilers]
 
+## other problem
+
+ - golang go to defind 無法使用
 
 [rc]: <https://github.com/whlin/rc>
 [yen3 vimfilers]: <https://github.com/yen3/vimfiles>
