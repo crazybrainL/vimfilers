@@ -1,6 +1,13 @@
 " zM: fold all
 " zR: unfold all
 
+" Normal Mode Mapping: {{{
+    " Page Control Keymapping: {{{
+        nnoremap <C-K> <PageUp> 
+        nnoremap <C-J> <PageDown> 
+    " "}}}
+" "}}}
+
 " Insert Mode Mapping: {{{
     " Esc Keymapping: {{{
         "inoremap jk <esc>
