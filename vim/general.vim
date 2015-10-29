@@ -1,9 +1,20 @@
 " zM: fold all
 " zR: unfold all
 
-" Esc Keymapping: {{{
-inoremap jk <esc>
+" Insert Mode Mapping: {{{
+    " Esc Keymapping: {{{
+        "inoremap jk <esc>
+        inoremap ;; <esc>
+    " "}}}
+    " Type Semicolon Keymapping: {{{
+        inoremap ;<space> ;
+    "" "}}}
+    " Save File Keymapping: {{{
+        "inoremap jkw <esc>:w<cr>
+        inoremap ;w <esc>:w<cr>
+    " "}}}
 " "}}}
+
 " General: {{{
 "" auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
