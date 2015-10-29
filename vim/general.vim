@@ -3,8 +3,8 @@
 
 " Normal Mode Mapping: {{{
     " Page Control Keymapping: {{{
-        nnoremap <C-K> <PageUp> 
-        nnoremap <C-J> <PageDown> 
+        nnoremap <C-J> <PageUp> 
+        nnoremap <C-K> <PageDown> 
     " "}}}
 " "}}}
 
