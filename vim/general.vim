@@ -123,7 +123,7 @@ vnoremap <s-tab> <gv
 " Function_key: {{{
 
 nnoremap <silent><F1> :tab h<CR>
-nnoremap <silent><F2> :VimFiler<CR>
+nnoremap <silent><F2> :VimFilerExplorer<CR>
 "nnoremap <silent><F3> :VimFilerExplorer -winwidth=25<CR>
 nmap <silent><F6> :CCTreeLoadDB cscope.out<CR>
 
