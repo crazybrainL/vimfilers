@@ -327,8 +327,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 "mapping
-if &filetype=='go'
-else
+if !&filetype=='go'
     nnoremap <leader>gs :YcmDiags<cr>
     nnoremap <leader>gd :YcmCompleter GoToDeclaration<cr>
     nnoremap <leader>gf :YcmCompleter GoToDefinition<cr>
