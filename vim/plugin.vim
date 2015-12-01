@@ -82,19 +82,19 @@ let g:tagbar_type_go = {
 \ }
 " Function_key: {{{
 " vim-go custom mappings
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>dc :GoDef<CR>
-au FileType go nmap <Leader>e <Plug>(go-rename)
+autocmd FileType go nmap <Leader>s <Plug>(go-implements)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>dc <Plug>(go-doc)
+autocmd FileType go nmap <Leader>dcv <Plug>(go-doc-vertical)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>c <Plug>(go-coverage)
+autocmd FileType go nmap <Leader>gs <Plug>(go-def-split)
+autocmd FileType go nmap <Leader>gv <Plug>(go-def-vertical)
+autocmd FileType go nmap <Leader>gt <Plug>(go-def-tab)
+autocmd FileType go nmap <Leader>gd :GoDef<CR>
+autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 "}}}
 
 "" CCTree install
@@ -327,10 +327,13 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 "mapping
-nnoremap <leader>gs :YcmDiags<cr>
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<cr>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<cr>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<cr>
+if &filetype=='go'
+else
+    nnoremap <leader>gs :YcmDiags<cr>
+    nnoremap <leader>gd :YcmCompleter GoToDeclaration<cr>
+    nnoremap <leader>gf :YcmCompleter GoToDefinition<cr>
+    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<cr>
+endif
 
 """"""""""""""""""""""""
 " whlin YouCompleteMe setting
