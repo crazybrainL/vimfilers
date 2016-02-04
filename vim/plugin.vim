@@ -247,8 +247,9 @@ NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 NeoBundle 'scrooloose/syntastic'
 "NeoBundle 'Twinside/vim-cuteErrorMarker'
 
-"" Apperance 
-NeoBundle 'bling/vim-airline'
+"" Apperance
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'mkitt/tabline.vim'
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 "NeoBundleLazy 'ap/vim-css-color', { 'autoload' : {
