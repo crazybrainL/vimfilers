@@ -97,6 +97,21 @@ autocmd FileType go nmap <Leader>gd :GoDef<CR>
 autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 "}}}
 
+"" godlygeek/tabular
+NeoBundle 'godlygeek/tabular'
+
+"" javascript or node js plugin
+NeoBundle 'walm/jshint.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'guileen/vim-node'
+
+autocmd FileType javascript set dictionary+=$VIM.'\vimfiles\dict\node.dict'
+
+""
+
+
 "" CCTree install
 "NeoBundle 'hari-rangarajan/CCTree'
 
