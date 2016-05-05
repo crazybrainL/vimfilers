@@ -102,7 +102,6 @@ NeoBundle 'godlygeek/tabular'
 
 "" javascript or node js plugin
 NeoBundle 'walm/jshint.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'myhere/vim-nodejs-complete'
 NeoBundle 'guileen/vim-node'
