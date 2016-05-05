@@ -100,17 +100,6 @@ autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 "" godlygeek/tabular
 NeoBundle 'godlygeek/tabular'
 
-"" javascript or node js plugin
-NeoBundle 'walm/jshint.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'myhere/vim-nodejs-complete'
-NeoBundle 'guileen/vim-node'
-
-autocmd FileType javascript set dictionary+=$VIM.'\vimfiles\dict\node.dict'
-
-""
-
-
 "" CCTree install
 "NeoBundle 'hari-rangarajan/CCTree'
 
@@ -240,10 +229,21 @@ NeoBundle 'derekwyatt/vim-sbt', { 'autoload' : {
             \ 'filetypes' : 'scala'
             \ }}
 
-"" JavaScript
-"NeoBundleLazy 'jelera/vim-javascript-syntax'
-"NeoBundleLazy 'pangloss/vim-javascript'
+"" Javascript or node js plugin
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'jelera/vim-javascript-syntax'
 "NeoBundle 'mxw/vim-jsx'
+NeoBundle 'walm/jshint.vim'
+NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'wavded/vim-stylus'
+"NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'guileen/vim-node'
+
+autocmd FileType javascript set dictionary+=$VIM.'\vimfiles\dict\node.dict'
+let g:javascript_enable_domhtmlcss = 1
+let g:javascript_ignore_javaScriptdoc = 1
+set foldmethod=syntax
 
 "" Rust
 "NeoBundle 'rust-lang/rust.vim'
