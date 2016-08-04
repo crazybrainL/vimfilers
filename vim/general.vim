@@ -92,7 +92,7 @@ nnoremap <ESC>u :nohl<CR>
 " Folding: {{{
 
 """ set folding
-set foldnestmax=2
+set foldnestmax=5
 set foldcolumn=2
 
 set foldmethod=syntax
