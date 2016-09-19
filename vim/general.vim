@@ -98,10 +98,13 @@ set foldcolumn=2
 set foldmethod=syntax
 set foldlevel=99
 
-"augroup foldccpp
-    "au BufNewFile,BufFilePost,BufReadPost,FileReadPost *.c,*.h,*.cpp set foldmethod=syntax
-    "au BufNewFile,BufFilePost,BufReadPost,FileReadPost *.c,*.h,*.cpp set foldlevel=99 
-"augroup END
+augroup foldccpp
+    au BufNewFile,BufFilePost,BufReadPost,FileReadPost *.c,*.h,*.cpp set foldmethod=syntax
+augroup END
+
+augroup foldpy
+    au BufNewFile,BufFilePost,BufReadPost,FileReadPost *.py set foldmethod=indent
+augroup END
 
 " "}}}
 " Indent: {{{
