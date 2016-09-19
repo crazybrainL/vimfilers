@@ -243,7 +243,6 @@ NeoBundle 'guileen/vim-node'
 autocmd FileType javascript set dictionary+=$VIM.'\vimfiles\dict\node.dict'
 let g:javascript_enable_domhtmlcss = 1
 let g:javascript_ignore_javaScriptdoc = 1
-set foldmethod=syntax
 
 "" Rust
 "NeoBundle 'rust-lang/rust.vim'
