@@ -51,11 +51,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "NeoBundle 'tpope/vim-pathogen'
 
 NeoBundle 'iamcco/markdown-preview.vim'
-"let g:mkdp_path_to_chrome = "google-chrome"
 let g:mkdp_path_to_chrome = "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
 " path to the chrome or the command to open chrome(or other modern browsers)
 
-let g:mkdp_auto_start = 0
+let g:mkdp_auto_start = 1
 " set to 1, the vim will open the preview window once enter the markdown
 " buffer
 
