@@ -27,8 +27,8 @@ if [[ -e $VIMFILERSHOME/bundle ]]; then
     rm $VIMFILERSHOME/bundle
 fi
 
-mkdir ~/.bundle
-ln -s ~/.bundle `pwd`/bundle
+mkdir $HOME/.bundle
+ln -s $HOME/.bundle $VIMFILERSHOME/bundle
 
 ## Install Neobundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
