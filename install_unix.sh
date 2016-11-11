@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 ## Link dictionay and files
-PATHS=(`pwd` `pwd`/vimrc `pwd`/gvimrc)
-LINKS=(~/.vim ~/.vimrc ~/.gvimrc)
+
+VIMFILERSHOME=~/Documents/vimfilers
+
+PATHS=($VIMFILERSHOME $VIMFILERSHOME/vimrc $VIMFILERSHOME/gvimrc)
+LINKS=($HOME/.vim $HOME/.vimrc $HOME/.gvimrc)
 
 tLen=${#PATHS[@]}
 
