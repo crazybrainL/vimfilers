@@ -23,8 +23,8 @@ if [[ -e ~/.bundle ]]; then
     rm -rf ~/.bundle
 fi
 
-if [[ -e `pwd`/bundle ]]; then
-    rm `pwd`/bundle
+if [[ -e $VIMFILERSHOME/bundle ]]; then
+    rm $VIMFILERSHOME/bundle
 fi
 
 mkdir ~/.bundle
