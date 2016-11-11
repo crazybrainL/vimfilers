@@ -4,6 +4,10 @@
 
 VIMFILERSHOME=~/Documents/vimfilers
 
+if [[ ! -e $VIMFILERSHOME ]]; then
+    git clone https://github.com/whlin/vimfilers $VIMFILERSHOME
+fi
+
 PATHS=($VIMFILERSHOME $VIMFILERSHOME/vimrc $VIMFILERSHOME/gvimrc)
 LINKS=($HOME/.vim $HOME/.vimrc $HOME/.gvimrc)
 
