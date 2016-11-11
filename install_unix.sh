@@ -1,20 +1,42 @@
 #!/usr/bin/env bash
 
 ## Link dictionay and files
-rm ~/.vim    | ln -s `pwd` ~/.vim
-rm ~/.vimrc  | ln -s `pwd`/vimrc ~/.vimrc 
-rm ~/.gvimrc | ln -s `pwd`/gvimrc ~/.gvimrc 
-rm `pwd`/bundle & mkdir ~/.bundle & ln -s ~/.bundle `pwd`/bundle
+PATHS=(`pwd` `pwd`/vimrc `pwd`/gvimrc)
+LINKS=(~/.vim ~/.vimrc ~/.gvimrc)
 
-## Install Neobundle
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+tLen=${#PATHS[@]}
 
-## Install all plugins
-vim +NeoBundleInstall +qall
+for (( i=0; i<${tLen}; i++ ));
+do
+    if [[ -e ${LINKS[$i]} ]]; then
+        echo "rm ${LINKS[$i]}"
+        rm ${LINKS[$i]}
+    fi
+    echo "ln -s ${PATHS[$i]} ${LINKS[$i]}"
+    ln -s ${PATHS[$i]} ${LINKS[$i]}
+done
 
-## make vimproc
-cd ~/.vim/bundle/vimproc.vim && make
+if [[ ! -e ~/.bundle ]]; then
+    mkdir ~/.bundle
+else
+    ls -A1 ~/.bundle | xargs rm -rf
+fi
 
-## install YouCompleteMe
-#cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer --gocode-completer --tern-completer
-cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py
+if [[ -e `pwd`/bundle ]]; then
+    rm `pwd`/bundle
+fi
+
+ln -s ~/.bundle `pwd`/bundle
+
+### Install Neobundle
+#curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+### Install all plugins
+#vim +NeoBundleInstall +qall
+
+### make vimproc
+#cd ~/.vim/bundle/vimproc.vim && make
+
+### install YouCompleteMe
+##cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer --gocode-completer --tern-completer
+#cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py
