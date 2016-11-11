@@ -16,16 +16,15 @@ do
     ln -s ${PATHS[$i]} ${LINKS[$i]}
 done
 
-if [[ ! -e ~/.bundle ]]; then
-    mkdir ~/.bundle
-else
-    ls -A1 ~/.bundle | xargs rm -rf
+if [[ -e ~/.bundle ]]; then
+    rm -rf ~/.bundle
 fi
 
 if [[ -e `pwd`/bundle ]]; then
     rm `pwd`/bundle
 fi
 
+mkdir ~/.bundle
 ln -s ~/.bundle `pwd`/bundle
 
 ## Install Neobundle
