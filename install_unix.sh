@@ -16,19 +16,21 @@ tLen=${#PATHS[@]}
 for (( i=0; i<${tLen}; i++ ));
 do
     if [[ -e ${LINKS[$i]} ]]; then
-        echo "rm ${LINKS[$i]}"
-        rm ${LINKS[$i]}
+        echo "rm -rf ${LINKS[$i]}"
+        rm -rf ${LINKS[$i]}
     fi
     echo "ln -s ${PATHS[$i]} ${LINKS[$i]}"
     ln -s ${PATHS[$i]} ${LINKS[$i]}
 done
 
 if [[ -e ~/.bundle ]]; then
+    echo "rm -rf ~/.bundle"
     rm -rf ~/.bundle
 fi
 
 if [[ -e $VIMFILERSHOME/bundle ]]; then
-    rm $VIMFILERSHOME/bundle
+    echo "rm -rf $VIMFILERSHOME/bundle"
+    rm -rf $VIMFILERSHOME/bundle
 fi
 
 mkdir $HOME/.bundle
