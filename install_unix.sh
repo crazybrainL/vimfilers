@@ -17,11 +17,6 @@ cleanRCFiles (){
         fi
     done
    
-    if [[ -e $HOME/.bundle ]]; then
-        echo "rm -rf $HOME/.bundle"
-        rm -rf $HOME/.bundle
-    fi
-
     if [[ -e $VIMFILERSHOME/bundle ]]; then
         echo "rm -rf $VIMFILERSHOME/bundle"
         rm -rf $VIMFILERSHOME/bundle
@@ -34,6 +29,12 @@ buildRCFiles (){
         echo "ln -s ${PATHS[$i]} ${LINKS[$i]}"
         ln -s ${PATHS[$i]} ${LINKS[$i]}
     done
+    
+    if [[ -e $HOME/.bundle ]]; then
+        echo "rm -rf $HOME/.bundle"
+        rm -rf $HOME/.bundle
+    fi
+    
     mkdir $HOME/.bundle
     ln -s $HOME/.bundle $VIMFILERSHOME/bundle
 
