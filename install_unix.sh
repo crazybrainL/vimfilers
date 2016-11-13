@@ -1,50 +1,73 @@
 #!/usr/bin/env bash
 
 ## Link dictionay and files
-
-VIMFILERSHOME=~/Documents/vimfilers
-
-if [[ ! -e $VIMFILERSHOME ]]; then
-    git clone https://github.com/whlin/vimfilers $VIMFILERSHOME
-fi
-
+VIMFILERSHOME=$HOME/Documents/vimfilers
 PATHS=($VIMFILERSHOME $VIMFILERSHOME/vimrc $VIMFILERSHOME/gvimrc)
 LINKS=($HOME/.vim $HOME/.vimrc $HOME/.gvimrc)
 
 tLen=${#PATHS[@]}
 
-for (( i=0; i<${tLen}; i++ ));
-do
-    if [[ -e ${LINKS[$i]} ]]; then
-        echo "rm -rf ${LINKS[$i]}"
-        rm -rf ${LINKS[$i]}
+cleanRCFiles (){
+    # Remove Link
+    for (( i=0; i<${tLen}; i++ ));
+    do
+        if [[ -e ${LINKS[$i]} ]]; then
+            echo "rm -rf ${LINKS[$i]}"
+            rm -rf ${LINKS[$i]}
+        fi
+    done
+   
+    if [[ -e $HOME/.bundle ]]; then
+        echo "rm -rf $HOME/.bundle"
+        rm -rf $HOME/.bundle
     fi
-    echo "ln -s ${PATHS[$i]} ${LINKS[$i]}"
-    ln -s ${PATHS[$i]} ${LINKS[$i]}
+
+    if [[ -e $VIMFILERSHOME/bundle ]]; then
+        echo "rm -rf $VIMFILERSHOME/bundle"
+        rm -rf $VIMFILERSHOME/bundle
+    fi
+}
+
+buildRCFiles (){
+    for (( i=0; i<${tLen}; i++ ));
+    do
+        echo "ln -s ${PATHS[$i]} ${LINKS[$i]}"
+        ln -s ${PATHS[$i]} ${LINKS[$i]}
+    done
+    mkdir $HOME/.bundle
+    ln -s $HOME/.bundle $VIMFILERSHOME/bundle
+
+    ## Install Neobundle
+    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
+    ## Install all plugins
+    vim +NeoBundleInstall +qall
+
+    ## make vimproc
+    cd $HOME/.vim/bundle/vimproc.vim && make
+
+    ## install YouCompleteMe
+    #cd $HOME/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer --gocode-completer --tern-completer
+    cd $HOME/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py
+}
+
+while getopts c: opt
+do
+    case $opt in
+        c) CLEAN=$OPTARG;;
+        \?) echo "Invalid option -$OPTARG" >&2;;
+    esac
 done
 
-if [[ -e ~/.bundle ]]; then
-    echo "rm -rf ~/.bundle"
-    rm -rf ~/.bundle
+if [[ ! -e $VIMFILERSHOME ]]; then
+    git clone https://github.com/whlin/vimfilers $VIMFILERSHOME
 fi
 
-if [[ -e $VIMFILERSHOME/bundle ]]; then
-    echo "rm -rf $VIMFILERSHOME/bundle"
-    rm -rf $VIMFILERSHOME/bundle
+echo "----- CLEAN -----"
+cleanRCFiles
+
+if [[ "${CLEAN}" != true ]]; then
+    echo "----- BUILD -----"
+    buildRCFiles
 fi
 
-mkdir $HOME/.bundle
-ln -s $HOME/.bundle $VIMFILERSHOME/bundle
-
-## Install Neobundle
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-
-## Install all plugins
-vim +NeoBundleInstall +qall
-
-## make vimproc
-cd ~/.vim/bundle/vimproc.vim && make
-
-## install YouCompleteMe
-#cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer --gocode-completer --tern-completer
-cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py
