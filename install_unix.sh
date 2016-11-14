@@ -23,12 +23,15 @@ cleanRCFiles (){
     fi
 }
 
-buildRCFiles (){
+symlinkRCFiles (){
     for (( i=0; i<${tLen}; i++ ));
     do
         echo "ln -s ${PATHS[$i]} ${LINKS[$i]}"
         ln -s ${PATHS[$i]} ${LINKS[$i]}
     done
+}
+
+buildRCFiles (){
     
     if [[ -e $HOME/.bundle ]]; then
         echo "rm -rf $HOME/.bundle"
@@ -52,10 +55,11 @@ buildRCFiles (){
     cd $HOME/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.py
 }
 
-while getopts c: opt
+while getopts cs: opt
 do
     case $opt in
         c) CLEAN=$OPTARG;;
+        s) SYMLINK=$OPTARG;;
         \?) echo "Invalid option -$OPTARG" >&2;;
     esac
 done
@@ -68,7 +72,10 @@ echo "----- CLEAN -----"
 cleanRCFiles
 
 if [[ "${CLEAN}" != true ]]; then
-    echo "----- BUILD -----"
-    buildRCFiles
+    symlinkRCFiles
+    if [[ "${SYMLINK}" != true ]];then
+        echo "----- BUILD -----"
+        #buildRCFiles
+    fi
 fi
 
