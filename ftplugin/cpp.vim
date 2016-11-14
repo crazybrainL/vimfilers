@@ -1,43 +1,23 @@
-""" Source Code Formating
-autocmd Filetype c,cpp :set cindent
-autocmd Filetype c,cpp :set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s 
-
-""" Omnicppcomplete plugin setting
-set tags+=~/.vim/bundle/omincppcomplete/tags/cpp " add tag list
-set nocp
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_MayCompleteDot = 1
-let OmniCpp_MayCompleteArrow = 1
-let OmniCpp_MayCompleteScope = 1
-let OmniCpp_DisplayMode = 1
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
+" set indent - llvm style
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal tabstop=2
 
-" Header File/ Source File switching
-function! FileHeaderSource()
-    let fextname=expand("%:e")
-    let fname=expand("%:r")
-    if fextname=="h"
-         if filereadable(fname.".cpp")
-             exec ':e '.fname.".cpp"
-             return
-         endif
-        if filereadable(fname.".c")
-            exec ':e '.fname.".c"
-            return
-        endif
-    else
-        if filereadable(fname.".h")
-             exec ':e '.fname.".h"
-             return
-        endif
-    endif
-    echo "file not found"
-endfunction
-nmap fh :call FileHeaderSource()<cr>
+" Disable Youcompleteme autocomplete
+let g:ycm_auto_trigger = 0
+let g:ycm_key_invoke_completion = '<C-l>'
+
+"GNU Coding Standards
+setlocal cindent
+setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1
+setlocal expandtab
+setlocal shiftwidth=2
+setlocal tabstop=8
+setlocal softtabstop=2
+setlocal textwidth=80
+setlocal fo-=ro fo+=cql
+
