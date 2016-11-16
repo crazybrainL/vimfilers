@@ -139,6 +139,9 @@ if v:version >= 704
 
     "" JavaScript
     au BufNewFile,BufRead *.js set filetype=javascript.jsx
+
+    "" Golang
+    au BufRead,BufNewFile *.go set filetype=golang 
 endif
 " "}}}
 " Programming: {{{

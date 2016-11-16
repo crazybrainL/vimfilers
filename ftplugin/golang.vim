@@ -1,0 +1,14 @@
+""" Golang map
+nmap <Leader>s <Plug>(go-implements)
+nmap <Leader>i <Plug>(go-info)
+nmap <Leader>dc <Plug>(go-doc)
+nmap <Leader>dcv <Plug>(go-doc-vertical)
+nmap <leader>r <Plug>(go-run)
+nmap <leader>b <Plug>(go-build)
+nmap <leader>t <Plug>(go-test)
+nmap <leader>c <Plug>(go-coverage)
+nmap <Leader>gs <Plug>(go-def-split)
+nmap <Leader>gv <Plug>(go-def-vertical)
+nmap <Leader>gt <Plug>(go-def-tab)
+nmap <Leader>gd :GoDef<CR>
+nmap <Leader>e <Plug>(go-rename)
