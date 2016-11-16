@@ -53,10 +53,11 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Raimondi/delimitMate'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'plasticboy/vim-markdown', {'for': 'mkd'}
 Plug 'vim-scripts/DoxygenToolkit.vim', {'for': 'cpp'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rizzatti/dash.vim'
+Plug 'plasticboy/vim-markdown', {'for': 'mkd'}
+Plug 'iamcco/markdown-preview.vim',
 
 Plug 'vim-scripts/cscope.vim'
 
