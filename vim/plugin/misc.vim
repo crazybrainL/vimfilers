@@ -111,5 +111,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_loc_list = 0
 
 " }}}
+" Tagbar:{{{
+nmap <F8> :TagbarToggle<CR>
+" }}}
 
 " vim: ft=vim foldmethod=marker foldcolumn=1

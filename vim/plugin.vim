@@ -48,6 +48,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-sensible'
+Plug 'majutsushi/tagbar'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'Raimondi/delimitMate'
