@@ -73,6 +73,9 @@ Plug 'klen/python-mode', {'for': 'python'}
 Plug 'xitianfz/vim-python-syntax', {'for': 'python'}
 Plug 'nvie/vim-flake8',  {'for': 'python'}
 
+"" Golang
+Plug 'fatih/vim-go', {'for', 'go'}
+
 "" Git
 Plug 'tpope/vim-fugitive'
 Plug 'int3/vim-extradite'
