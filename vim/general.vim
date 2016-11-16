@@ -69,10 +69,10 @@ set hls
 nnoremap <ESC>u :nohl<CR>
 " "}}}
 " Folding: {{{
-"set foldnestmax=2
-"set foldcolumn=2
-"set foldmethod=syntax
-"set foldlevel=99
+set foldnestmax=5
+set foldcolumn=2
+set foldmethod=syntax
+set foldlevel=99
 " "}}}
 " Indent: {{{
 set backspace=indent,eol,start

@@ -6,7 +6,7 @@ syntax on
 "autocmd BufRead,BufNewFile *.py vmap f :w !python<CR>
 "autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
-autocmd FileType python setlocal foldmethod=indent
+autocmd FileType python setlocal foldmethod=syntax
 set foldlevel=99
 
 " Set python3 with YouCompleteMe
