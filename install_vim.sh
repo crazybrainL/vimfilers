@@ -5,12 +5,10 @@ CURRENT_PATH=`pwd`
 ## remove the previous link
 rm -rf $HOME/.vim
 rm -rf $HOME/.vimrc
-rm -rf $HOME/.gvimrc
 
 ## Link dictionay and files
 ln -s $CURRENT_PATH ~/.vim
 ln -s $CURRENT_PATH/vimrc ~/.vimrc 
-ln -s $CURRENT_PATH/gvimrc ~/.gvimrc 
 
 
 ## Install vim-plug and all plugins
