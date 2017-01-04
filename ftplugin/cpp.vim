@@ -8,7 +8,7 @@ setlocal softtabstop=2
 setlocal tabstop=2
 
 " Disable Youcompleteme autocomplete
-let g:ycm_auto_trigger = 0
+let g:ycm_auto_trigger = 1
 let g:ycm_key_invoke_completion = '<C-l>'
 
 "GNU Coding Standards
