@@ -83,8 +83,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'int3/vim-extradite'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 
-"" Ack
+"" Trace code.
 Plug 'mileszs/ack.vim'
+Plug 'dyng/ctrlsf.vim'
 
 "" Search {{{
 if g:yen3_search_plugin_select== 1

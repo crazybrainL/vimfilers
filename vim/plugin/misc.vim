@@ -119,4 +119,18 @@ nmap <F8> :TagbarToggle<CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " }}}
 
+" CtrlSF:{{{
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+let g:ctrlsf_auto_close = 0
+let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_winsize = '30%'
+" }}}
 " vim: ft=vim foldmethod=marker foldcolumn=1
