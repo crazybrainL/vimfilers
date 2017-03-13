@@ -83,6 +83,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'int3/vim-extradite'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 
+"" Ack
+Plug 'mileszs/ack.vim'
+
 "" Search {{{
 if g:yen3_search_plugin_select== 1
 """ Unite

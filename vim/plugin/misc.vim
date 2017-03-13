@@ -115,4 +115,8 @@ let g:syntastic_auto_loc_list = 0
 nmap <F8> :TagbarToggle<CR>
 " }}}
 
+" Ack:{{{
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" }}}
+
 " vim: ft=vim foldmethod=marker foldcolumn=1
