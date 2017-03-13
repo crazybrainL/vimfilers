@@ -30,6 +30,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 "" Apperence
+Plug 'tomasr/molokai'
+Plug 'w0ng/vim-hybrid'
+Plug 'nanotech/jellybeans.vim'
 Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 
 Plug 'vim-airline/vim-airline'

@@ -11,7 +11,6 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 syntax enable
 set t_Co=256            " 256 color mode
 "set background=dark
-
 color Tomorrow-Night-Bright
 
 set ttyfast

@@ -1,4 +1,5 @@
 " Airline: {{{
+let g:airline_theme='term'
 let g:airline_powerline_fonts = 0
 let g:airline_detect_modified = 1
 let g:airline_detect_paste = 1
@@ -19,6 +20,7 @@ let g:airline#extensions#whitespace#enabled = 0
       \ '' : 'S',
       \ }
 " }}}
+
 " VimFiler: {{{
 let g:vimfiler_as_default_explorer = 1
 
