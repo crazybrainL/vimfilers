@@ -106,10 +106,10 @@ nnoremap <silent><F7> :StripWhitespace<CR>
 " Tab_setting: {{{
 
 "" Tab_bar_color
-nnoremap <leader>tc :tabnew<CR>
+nnoremap <leader>tn :tabnew<CR>
 nnoremap <leader>te :tabedit<SPACE>
 nnoremap <leader>tm :tabmove<SPACE>
-nnoremap <leader>tk :tabclose<CR>
+nnoremap <leader>tc :tabclose<CR>
 nnoremap <C-H> :tabprev<CR>
 nnoremap <C-L> :tabnext<CR>
 
